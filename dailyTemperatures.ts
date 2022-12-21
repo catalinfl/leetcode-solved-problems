@@ -4,7 +4,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
     for (let i=0; i<temperatures.length; i++) {
         while (stack.length > 0 && temperatures[i] > temperatures[stack[stack.length-1]]) {
             let index = stack[stack.length - 1];
-            ans[index] = i - stack.pop();
+            ans[index] = i - stack.pop() as number;
         }
         stack.push(i);
     }
